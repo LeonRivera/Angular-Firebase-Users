@@ -1,0 +1,45 @@
+<div class="card border-primary mb-3">
+    <div class="card-header">Users</div>
+    <div class="card-body text-primary">
+      <!-- <h5 class="card-title">Users</h5> -->
+  
+      <!-- <table class="table table-bordered table-striped">
+          <thead>
+              <tr>
+                  <th>username</th>
+                  <th>password</th>
+                  <th>age</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let user of users">
+                  <td>{{user.username}}</td>
+                  <td>{{user.password}}</td>
+                  <td>{{user.age}}</td>
+              </tr>
+          </tbody>
+      </table> -->
+
+      <div class="container">
+          <div class="row">
+              <div class="col-12 d-flex">
+                <div *ngFor="let user of users" class="card p-2 m-5" style="width: 18rem;">
+                    <img class="card-img-top card-header" src="https://cdn.icon-icons.com/icons2/827/PNG/512/user_icon-icons.com_66546.png" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title">{{user.username}}</h5>
+                      <p class="card-text">{{user.password}}</p>
+                      <div class="col-12">
+                        <a href="#" class="btn btn-primary w-100 mb-3">Edit</a>
+                        <a href="#" class="btn btn-danger w-100">Delete</a>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      
+
+    </div>
+  </div>
+  

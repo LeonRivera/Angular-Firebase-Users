@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-6 mt-5 text-center">
+
+      <form class="form-signin p-5" action="/login" method="post">
+        <img
+          class="mb-4"
+          src="https://cdn.worldvectorlogo.com/logos/angular-icon-1.svg"
+          alt=""
+          width="72"
+          height="72"
+        />
+        <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+        <label for="inputEmail" class="sr-only">Username</label>
+        <input
+          type="text"
+          id="inputEmail"
+          class="form-control"
+          placeholder="Username"
+          required=""
+          autofocus=""
+          name="username"
+          [(ngModel)]="username"
+        />
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input
+          type="password"
+          id="inputPassword"
+          class="form-control"
+          placeholder="Password"
+          required=""
+          name="password"
+          [(ngModel)]="password"
+        />
+
+        <button class="mt-3 btn btn-lg btn-primary btn-block" (click)="logIn()">
+          Sign in
+        </button>
+
+        
+      </form>
+    </div>
+  </div>
+</div>
