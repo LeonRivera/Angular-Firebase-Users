@@ -1,0 +1,9 @@
+.card-tailwind{
+    margin: 3rem;
+}
+.tailwind-container-cards{
+    margin-top: 6rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+}

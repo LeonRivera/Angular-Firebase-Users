@@ -19,6 +19,7 @@ export class HeaderComponent implements OnInit {
 
 
   logout():void{
+    console.log("logout");
     this.loginService.logout();
   }
 }
