@@ -12,7 +12,7 @@ export class UserService {
   public token: boolean = false;
 
   usuario: User = {
-    username: "def",
+    username: "",
     password: "",
     age: 0
   }
