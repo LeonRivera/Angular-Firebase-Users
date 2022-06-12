@@ -10,6 +10,8 @@ import { UserService } from '../user.service';
 })
 export class HeaderComponent implements OnInit {
 
+  public activatedMenu:boolean = false;
+
   constructor(private userService:UserService,
     private router:Router,
     private loginService:LoginService) { }
@@ -21,5 +23,17 @@ export class HeaderComponent implements OnInit {
   logout():void{
     console.log("logout");
     this.loginService.logout();
+  }
+
+  activateMenu():void{
+    
+
+    if(!this.activatedMenu){
+      this.activatedMenu = true;
+    }else{
+      this.activatedMenu = false;
+    }
+
+    console.log(this.activatedMenu);
   }
 }
