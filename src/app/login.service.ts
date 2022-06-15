@@ -1,13 +1,16 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
+import { catchError, throwError } from "rxjs";
 import { User } from "./user";
+import Swal from 'sweetalert2';
 
 @Injectable()
 export class LoginService{
 
 
   private urlAuthenticate: string = 'http://localhost:9069/users/auth';
+  private prodUrlAuthenticate: string = 'https://firebase-u-api-lrv.herokuapp.com/users/auth';
 
   static token: boolean = false;
 
@@ -28,7 +31,14 @@ export class LoginService{
         console.log(this.usuario.password);
     
         this.http
-          .post<boolean>(this.urlAuthenticate, this.usuario)
+          .post<boolean>(this.prodUrlAuthenticate, this.usuario)
+          .pipe(
+            catchError(e => {
+              console.log(e);
+              Swal.fire('Error al autenticar', e.error.message, 'error');
+              return throwError(e);
+            }) 
+          )
           .subscribe((response) => {
             console.log("setting token");
             LoginService.token = response;
@@ -37,6 +47,7 @@ export class LoginService{
             if(response === true){
               sessionStorage.setItem('logged', 'true');
             }else{
+              Swal.fire('Login', "usuario o contraseña incorrectos", 'error');
               sessionStorage.setItem('logged', 'false');
             }
     
