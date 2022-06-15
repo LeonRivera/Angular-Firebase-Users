@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { LoginGuardian } from './login/login-guardian.service';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginService } from './login.service';
+import { FormUsersComponent } from './form-users/form-users.component';
 
 
 // const routes: Routes = [
@@ -29,6 +30,7 @@ import { LoginService } from './login.service';
     LoginComponent,
     HeaderComponent,
     FooterComponent,
+    FormUsersComponent,
   ],
   imports: [
     FormsModule,
